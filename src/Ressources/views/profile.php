@@ -249,7 +249,7 @@ include "../manager/UsersManagers.php";
                             </a>
                         </li>
                         <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
+                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="../control/loginCtr.php?action=deconnexion">
                                 Sign out
                                 <span class="fas fa-sign-out-alt"></span>
                             </a>
@@ -276,7 +276,18 @@ include "../manager/UsersManagers.php";
                                                         </a>
                                                     </div>
                                                     <div class="names">
-                                                        <h3 class="title text-light">@jenifer</h3>
+                                                        <h3 class="title text-light">
+                                                            <?php
+                                                            $manger = new UsersManagers();
+                                                            $res=$manger->connecter1($_SESSION['email']);
+
+
+                                                            if($res){
+                                                                echo $res['nom']."  ".$res['prenom'];
+                                                            }
+
+                                                            ?>
+                                                        </h3>
                                                     </div>
                                                 </div>
                                             </div>

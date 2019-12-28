@@ -11,15 +11,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">ESPACES</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-                </li>
+                <?php
+                    $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+                    if ($curPageName != 'profile.php') {
+
+                        ?>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                               href="#portfolio">ESPACES</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+                        </li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+                        </li>
                 <li class="name-user">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">
                         <?php
@@ -39,7 +45,6 @@
                     <img src="https://demo.bootstrap.news/bootnews/assets/img/avatar/avatar1.png" alt="Circle Image" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="avatar-lg rounded-circle img-fluid logo-user" data-toggle="tooltip" data-placement="bottom">
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <button class="dropdown-item" type="button"><a href='profile.php'>Profile</a></button>
-                        <button class="dropdown-item" type="button"><a href='#'>Settings</a></button>
                         <button class="dropdown-item" type="button"><a href="../control/loginCtr.php?action=deconnexion">Log out</a></button>
                     </div>
                 </div>
@@ -47,5 +52,8 @@
                 </li>
             </ul>
         </div>
+        <?php
+        }
+        ?>
     </div>
 </nav>
