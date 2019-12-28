@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container" style="height:65px">
-        <a href='../home.php'>
+        <a href='home.php'>
             <img src="../../../web/img/logo.png" style="margin-top:50px ; border: 2px solid ; border-radius: 50px ; width: 80px ;  margin-right:5px;">
         </a>
         <a class="navbar-brand js-scroll-trigger" href="#page-top" ></a>

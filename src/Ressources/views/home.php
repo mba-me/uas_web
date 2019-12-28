@@ -19,7 +19,7 @@ if (isset($_SESSION['email']) && ($_SESSION['email']!=''))
   <title>BlogUAS</title>
 
   <!-- Custom fonts for this theme -->
-    <link href="../../../web/custom/navbar.css" rel="stylesheet" type="text/css">
+    <link href="../../../web/css/custom.css" rel="stylesheet" type="text/css">
     <link href="../../../web/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -41,7 +41,7 @@ include "shared/navbar.php";
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="../../../web/img/avataaars.svg" alt="">
+      <img class="logo-web" src="../../../web/img/web_logo.jpg" alt="">
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0">UNIVERSITE ARABE DES SCIENCES</h1>
@@ -86,10 +86,11 @@ include "shared/navbar.php";
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
+                <i class="fas fa-eye fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../../../web/img/portfolio/cabin.png" alt="">
+            <img class="img-fluid" src="../../../web/img/student_avatar.png" alt="">
+              <p class="collaborate-description">Etudiants</p>
           </div>
         </div>
 
@@ -98,10 +99,11 @@ include "shared/navbar.php";
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
+                <i class="fas fa-eye fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../../../web/img/portfolio/cake.png" alt="">
+            <img class="img-fluid" src="../../../web/img/avatar_teacher.png" alt="">
+              <p class="collaborate-description">Enseignants</p>
           </div>
         </div>
 
