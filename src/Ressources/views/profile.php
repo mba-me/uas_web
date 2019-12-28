@@ -18,7 +18,8 @@ include "../manager/UsersManagers.php";
   <title>BlogUAS</title>
 
   <!-- Custom fonts for this theme -->
-  <link href="../../../web/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../web/custom/navbar.css" rel="stylesheet" type="text/css">
+    <link href="../../../web/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -222,51 +223,9 @@ include "../manager/UsersManagers.php";
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container" style="height:65px">
-     <a href='home.php'><img src="../../../web/img/logo.png" style="margin-top:50px ; border: 2px solid ; border-radius: 50px ; width: 80px ;  margin-right:5px;"></a>
-      <a class="navbar-brand js-scroll-trigger" href="#page-top" ></a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">ESPACES</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-          
-          <div class="dropdown">
-             <button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <?php 
-                $manger = new UsersManagers();
-                $res=$manger->connecter1($_SESSION['email']);
-            
-
-            if($res){
-              echo $res['nom']."  ".$res['prenom'];
-            }
-             
-            ?>
-             </button>
-             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-             <button class="dropdown-item" type="button"><a href='profile.php'>Profile</button>
-             <button class="dropdown-item" type="button"><a href='#'>Settings</button>
-             <button class="dropdown-item" type="button"><a href='#'>Log out</button>
-          </div>
-      </div>
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#"></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php
+  include "shared/navbar.php";
+  ?>
   </br> <br> <br> <br> <br> <br>
   <section id="about-us" class="py-5">
     <div class="container">
