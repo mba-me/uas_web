@@ -18,7 +18,8 @@ include "../manager/UsersManagers.php";
   <title>BlogUAS</title>
 
   <!-- Custom fonts for this theme -->
-  <link href="../../../web/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../web/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="../../../web/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -222,51 +223,9 @@ include "../manager/UsersManagers.php";
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container" style="height:65px">
-     <a href='home.php'><img src="../../../web/img/logo.png" style="margin-top:50px ; border: 2px solid ; border-radius: 50px ; width: 80px ;  margin-right:5px;"></a>
-      <a class="navbar-brand js-scroll-trigger" href="#page-top" ></a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">ESPACES</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-          
-          <div class="dropdown">
-             <button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <?php 
-                $manger = new UsersManagers();
-                $res=$manger->connecter1($_SESSION['email']);
-            
-
-            if($res){
-              echo $res['nom']."  ".$res['prenom'];
-            }
-             
-            ?>
-             </button>
-             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-             <button class="dropdown-item" type="button"><a href='profile.php'>Profile</button>
-             <button class="dropdown-item" type="button"><a href='#'>Settings</button>
-             <button class="dropdown-item" type="button"><a href='#'>Log out</button>
-          </div>
-      </div>
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#"></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php
+  include "shared/navbar.php";
+  ?>
   </br> <br> <br> <br> <br> <br>
   <section id="about-us" class="py-5">
     <div class="container">
@@ -277,28 +236,9 @@ include "../manager/UsersManagers.php";
                     <!--sidebar menu-->
                     <ul class="list-unstyled sidebar-menu pl-md-2 pr-md-0">
                         <li>
-                            <a class="sidebar-item active d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                Dashboard
-                                <span class="fas fa-tachometer-alt"></span>
-                            </a>
-                        </li>
-                        <li>
                             <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
                                 Profile
                                 <span class="fas fa-user"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                Post
-                                <span class="fas fa-copy"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                Comment
-                                <span class="side-notif" title="1 new comment">1</span>
-                                <span class="fas fa-comment"></span>
                             </a>
                         </li>
                         <li>
@@ -309,19 +249,7 @@ include "../manager/UsersManagers.php";
                             </a>
                         </li>
                         <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                Favorite
-                                <span class="fas fa-heart"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                Setting
-                                <span class="fas fa-cog"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
+                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="../control/loginCtr.php?action=deconnexion">
                                 Sign out
                                 <span class="fas fa-sign-out-alt"></span>
                             </a>
@@ -348,12 +276,18 @@ include "../manager/UsersManagers.php";
                                                         </a>
                                                     </div>
                                                     <div class="names">
-                                                        <h3 class="title text-light">@jenifer</h3>
-                                                        <a href="#" class="btn btn-link btn-facebook"><i class="fab fa-facebook"></i></a>
-                                                        <a href="#" class="btn btn-link btn-twitter"><i class="fab fa-twitter"></i></a>
-                                                        <a href="#" class="btn btn-link btn-gplus"><i class="fab fa-google-plus"></i></a>
-                                                        <a href="#" class="btn btn-link btn-instagram"><i class="fab fa-instagram"></i></a>
-                                                        <a href="#" class="btn btn-link btn-youtube"><i class="fab fa-youtube"></i></a>
+                                                        <h3 class="title text-light">
+                                                            <?php
+                                                            $manger = new UsersManagers();
+                                                            $res=$manger->connecter1($_SESSION['email']);
+
+
+                                                            if($res){
+                                                                echo $res['nom']."  ".$res['prenom'];
+                                                            }
+
+                                                            ?>
+                                                        </h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -371,9 +305,6 @@ include "../manager/UsersManagers.php";
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Latest post</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
@@ -393,28 +324,6 @@ include "../manager/UsersManagers.php";
                                                                 <div class="numbers">
                                                                     <p>Article</p>
                                                                     112
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6">
-                                            <a class="member-item" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <div class="card mb-2 mb-md-5 py-3">
-                                                    <div class="content">
-                                                        <div class="row">
-                                                            <div class="col-6 d-flex justify-content-center align-items-center">
-                                                                <div class="icon-big text-info text-center" title="1 new comment">
-                                                                    <div class="notif">1</div>
-                                                                    <i class="fas fa-comment"></i>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6 d-flex justify-content-center align-items-center">
-                                                                <div class="numbers">
-                                                                    <p>Comments</p>
-                                                                    454
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -471,27 +380,6 @@ include "../manager/UsersManagers.php";
                                                     <div class="content">
                                                         <div class="row">
                                                             <div class="col-6 d-flex justify-content-center align-items-center">
-                                                                <div class="icon-big text-facebook text-center">
-                                                                    <i class="fas fa-star"></i>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6 d-flex justify-content-center align-items-center">
-                                                                <div class="numbers">
-                                                                    <p>Following</p>
-                                                                    112
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6">
-                                            <a class="member-item" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                                <div class="card mb-2 mb-md-5 py-3">
-                                                    <div class="content">
-                                                        <div class="row">
-                                                            <div class="col-6 d-flex justify-content-center align-items-center">
                                                                 <div class="icon-big text-success text-center">
                                                                     <i class="fas fa-users"></i>
                                                                 </div>
@@ -518,29 +406,6 @@ include "../manager/UsersManagers.php";
                                         <p><b>Address:</b> Street 12 vo 05, California, United States</p>
                                         <p><b>Phone:</b> +1 987654321</p>
                                         
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                    <div class="p-3 border mb-3">
-                                        <h5>Recently Published</h5>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <ul class="list-unstyled statistics">
-                                                    <li>
-                                                        <span class="text-primary">Oct 20</span> <a class="h6" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Toyota Sienna rates marginal in passenger-side overlap crash test</a>
-                                                    </li>
-                                                    <li>
-                                                        <span class="text-primary">Oct 12</span> <a class="h6" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Ford reveals autonomous vehicle philosophies, priorities</a>
-                                                    </li>
-                                                    <li>
-                                                        <span class="text-primary">Oct 7</span> <a class="h6" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Offer Hints to How Dogs Became Domesticated</a>
-                                                    </li>
-                                                    <li>
-                                                        <span class="text-primary">Oct 6</span> <a class="h6" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Consumer apprehension grows over autonomous tech, study says</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

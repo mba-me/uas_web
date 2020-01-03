@@ -19,9 +19,10 @@ if (isset($_SESSION['email']) && ($_SESSION['email']!=''))
   <title>BlogUAS</title>
 
   <!-- Custom fonts for this theme -->
-  <link href="../../../web/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="../../../web/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="../../../web/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
   <!-- Theme CSS -->
   <link href="../../../web/css/freelancer.min.css" rel="stylesheet">
@@ -31,58 +32,16 @@ if (isset($_SESSION['email']) && ($_SESSION['email']!=''))
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container" style="height:65px">
-      <a href='home.php'><img src="../../../web/img/logo.png" style="margin-top:50px ; border: 2px solid ; border-radius: 50px ; width: 80px ;  margin-right:5px;"></a>
-      <a class="navbar-brand js-scroll-trigger" href="#page-top" ></a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">ESPACES</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-          
-          <div class="dropdown">
-             <button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <?php 
-                $manger = new UsersManagers();
-                $res=$manger->connecter1($_SESSION['email']);
-            
 
-            if($res){
-              echo $res['nom']."  ".$res['prenom'];
-            }
-             
-            ?>
-             </button>
-             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-             <button class="dropdown-item" type="button"><a href='profile.php'>Profile</a></button>
-             <button class="dropdown-item" type="button"><a href='#'>Settings</a></button>
-             <button class="dropdown-item" type="button"><a href="../control/loginCtr.php?action=deconnexion">Log out</a></button>
-          </div>
-      </div>
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#"></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+<?php
+include "shared/navbar.php";
+?>
   <!-- Masthead -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="../../../web/img/avataaars.svg" alt="">
+      <img class="logo-web" src="../../../web/img/web_logo.jpg" alt="">
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0">UNIVERSITE ARABE DES SCIENCES</h1>
@@ -127,10 +86,11 @@ if (isset($_SESSION['email']) && ($_SESSION['email']!=''))
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
+                <i class="fas fa-eye fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../../../web/img/portfolio/cabin.png" alt="">
+            <img class="img-fluid" src="../../../web/img/student_avatar.png" alt="">
+              <p class="collaborate-description">Etudiants</p>
           </div>
         </div>
 
@@ -139,10 +99,11 @@ if (isset($_SESSION['email']) && ($_SESSION['email']!=''))
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
+                <i class="fas fa-eye fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../../../web/img/portfolio/cake.png" alt="">
+            <img class="img-fluid" src="../../../web/img/avatar_teacher.png" alt="">
+              <p class="collaborate-description">Enseignants</p>
           </div>
         </div>
 
