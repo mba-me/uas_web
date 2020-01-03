@@ -4,6 +4,7 @@ include "../config/dbConnect.php";
 include "../manager/UsersManagers.php";
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -246,7 +247,7 @@ include "../manager/UsersManagers.php";
              <button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <?php 
                 $manger = new UsersManagers();
-                $res=$manger->connecter1($_SESSION['email']);
+                $res=$manger->connecter1($_REQUEST['id']);
             
 
             if($res){
@@ -256,8 +257,8 @@ include "../manager/UsersManagers.php";
             ?>
              </button>
              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-             <button class="dropdown-item" type="button"><a href='profile.php'>Profile</button>
-             <button class="dropdown-item" type="button"><a href='#'>Settings</button>
+             <button class="dropdown-item" type="button"><a href='profile.php?id=<?php echo $res['id'] ?>'>Profile</button>
+             <button class="dropdown-item" type="button"><a href='edit.php'>Settings</button>
              <button class="dropdown-item" type="button"><a href='#'>Log out</button>
           </div>
       </div>
@@ -276,33 +277,15 @@ include "../manager/UsersManagers.php";
                 <div class="sidebar-left">
                     <!--sidebar menu-->
                     <ul class="list-unstyled sidebar-menu pl-md-2 pr-md-0">
+                        
                         <li>
-                            <a class="sidebar-item active d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                Dashboard
-                                <span class="fas fa-tachometer-alt"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
+                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="#">
                                 Profile
                                 <span class="fas fa-user"></span>
                             </a>
                         </li>
                         <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                Post
-                                <span class="fas fa-copy"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
-                                Comment
-                                <span class="side-notif" title="1 new comment">1</span>
-                                <span class="fas fa-comment"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
+                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="chat.php">
                                 Messages
                                 <span class="side-notif" title="1 new messages">1</span>
                                 <span class="fas fa-envelope"></span>
@@ -348,7 +331,16 @@ include "../manager/UsersManagers.php";
                                                         </a>
                                                     </div>
                                                     <div class="names">
-                                                        <h3 class="title text-light">@jenifer</h3>
+                                                        <h3 class="title text-light"><?php 
+                $manger = new UsersManagers();
+                $res=$manger->connecter1($_REQUEST['id']);
+            
+
+            if($res){
+              echo $res['nom']."  ".$res['prenom'];
+            }
+             
+            ?></h3>
                                                         <a href="#" class="btn btn-link btn-facebook"><i class="fab fa-facebook"></i></a>
                                                         <a href="#" class="btn btn-link btn-twitter"><i class="fab fa-twitter"></i></a>
                                                         <a href="#" class="btn btn-link btn-gplus"><i class="fab fa-google-plus"></i></a>
@@ -566,3 +558,4 @@ include "../manager/UsersManagers.php";
   <script src="../../../web/js/freelancer.min.js"></script>
   </body>
   </html>
+       

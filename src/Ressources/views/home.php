@@ -55,7 +55,7 @@ if (isset($_SESSION['email']) && ($_SESSION['email']!=''))
              <button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <?php 
                 $manger = new UsersManagers();
-                $res=$manger->connecter1($_SESSION['email']);
+                $res=$manger->connecter2($_SESSION['email']);
             
 
             if($res){
@@ -65,8 +65,8 @@ if (isset($_SESSION['email']) && ($_SESSION['email']!=''))
             ?>
              </button>
              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-             <button class="dropdown-item" type="button"><a href='profile.php'>Profile</a></button>
-             <button class="dropdown-item" type="button"><a href='#'>Settings</a></button>
+             <button class="dropdown-item" type="button"><a href='profile.php?id=<?php echo $res['id'] ?>'>Profile</a></button>
+             <button class="dropdown-item" type="button"><a href='edit.php'>Settings</a></button>
              <button class="dropdown-item" type="button"><a href="../control/loginCtr.php?action=deconnexion">Log out</a></button>
           </div>
       </div>

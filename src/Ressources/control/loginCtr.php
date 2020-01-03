@@ -10,9 +10,11 @@ if($_GET['action'] == 'connexion')
 {   
     $email      = $_POST['username'];
     $password        = $_POST['password'];
+    $id        = $_POST['id'];
+
    
     $manger = new UsersManagers();
-    $res=$manger->connecter($email,$password);
+    $res=$manger->connecter($email,$password,$id);
 
     
 if($res){

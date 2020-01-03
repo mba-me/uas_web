@@ -19,7 +19,7 @@
         <td><?php echo $user['nom'] ?></td>
         <td><?php echo $user['prenom'] ?></td>
         <td><?php echo $user['email'] ?></td>
-        <td> <a href="modifier.php?idUsers=<?php echo $user['id'] ?>">Modifier</a></td>
+        <td> <a href="profile.php?id=<?php echo $user['id'] ?>">Voir profile</a></td>
       </tr>
     </tbody>
                     <?php } ?>
