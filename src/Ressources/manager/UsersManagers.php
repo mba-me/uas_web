@@ -4,7 +4,7 @@
 class UsersManagers{
 
  function connexion(){
- 	return  new PDO('mysql:host=localhost;dbname=uas_web', 'root', 'Mariomarwen$$');
+ 	return  new PDO('mysql:host=localhost;dbname=projetweb', 'root', '');
  }
 
  function findAll2(){
@@ -26,6 +26,32 @@ class UsersManagers{
         }
         return $persos;
        }   
+       
+ function findByID($id_user){
+        $db = $this->connexion();
+        $query=$db->prepare("SELECT * FROM users WHERE id=:param");
+        $query->bindParam(':param', $id);
+        $query->execute();
+   
+        $result = $query -> fetch();
+        return $result;
+    }
+
+    function update($nom, $prenom,$type, $email, $password, $sex, $id){
+
+        $db = $this->connexion();
+        $q = $db->prepare('update users set nom=:first_name,prenom=:last_name,type=:type,email=:email,password=:password,sex=:sex WHERE id=:id ');
+        $q->bindValue(":first_name",$nom,PDO::PARAM_STR);
+        $q->bindValue(":last_name",$prenom,PDO::PARAM_STR);
+        $q->bindValue(":type",$type,PDO::PARAM_STR);
+        $q->bindValue(":email",$email,PDO::PARAM_STR);
+        $q->bindValue(":password",$password,PDO::PARAM_STR);
+        $q->bindValue(":sex",$sex,PDO::PARAM_STR);
+        $q->bindParam(':id', $id);
+        $q->execute();
+
+    }
+
 
 function add($nom,$prenom, $type, $email,$password){
     $db = $this->connexion();
@@ -48,7 +74,12 @@ function connecter($email, $password){
    return $request->fetch(pdo::FETCH_ASSOC);
   }
 
-  function connecter1($email){
+  function connecter1($id){
+    $db= $this->connexion();
+    $request = $db->query("SELECT * from users where id='".$id."'"); 
+    return $request->fetch(pdo::FETCH_ASSOC);
+   }
+   function connecter2($email){
     $db= $this->connexion();
     $request = $db->query("SELECT * from users where email='".$email."'"); 
     return $request->fetch(pdo::FETCH_ASSOC);

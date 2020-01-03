@@ -45,6 +45,7 @@
                     <img src="https://demo.bootstrap.news/bootnews/assets/img/avatar/avatar1.png" alt="Circle Image" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="avatar-lg rounded-circle img-fluid logo-user" data-toggle="tooltip" data-placement="bottom">
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <button class="dropdown-item" type="button"><a href='profile.php'>Profile</a></button>
+                        <button class="dropdown-item" type="button"><a href='../edit.php'>Settings</a></button>
                         <button class="dropdown-item" type="button"><a href="../control/loginCtr.php?action=deconnexion">Log out</a></button>
                     </div>
                 </div>

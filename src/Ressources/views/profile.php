@@ -4,6 +4,7 @@ include "../config/dbConnect.php";
 include "../manager/UsersManagers.php";
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -288,6 +289,11 @@ include "../manager/UsersManagers.php";
 
                                                             ?>
                                                         </h3>
+                                                        <a href="#" class="btn btn-link btn-facebook"><i class="fab fa-facebook"></i></a>
+                                                        <a href="#" class="btn btn-link btn-twitter"><i class="fab fa-twitter"></i></a>
+                                                        <a href="#" class="btn btn-link btn-gplus"><i class="fab fa-google-plus"></i></a>
+                                                        <a href="#" class="btn btn-link btn-instagram"><i class="fab fa-instagram"></i></a>
+                                                        <a href="#" class="btn btn-link btn-youtube"><i class="fab fa-youtube"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -305,6 +311,9 @@ include "../manager/UsersManagers.php";
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Latest post</a>
                                 </li>
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
@@ -405,7 +414,7 @@ include "../manager/UsersManagers.php";
                                         <p><b>About:</b> Hello my name is Jenifer, My passion is writting. I hope you enjoy with my article.</p>
                                         <p><b>Address:</b> Street 12 vo 05, California, United States</p>
                                         <p><b>Phone:</b> +1 987654321</p>
-                                        
+
                                     </div>
                                 </div>
                             </div>
