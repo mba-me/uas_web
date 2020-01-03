@@ -237,13 +237,13 @@ include "../manager/UsersManagers.php";
                     <!--sidebar menu-->
                     <ul class="list-unstyled sidebar-menu pl-md-2 pr-md-0">
                         <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
+                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="#">
                                 Profile
                                 <span class="fas fa-user"></span>
                             </a>
                         </li>
                         <li>
-                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
+                            <a class="sidebar-item d-flex justify-content-between align-items-center" href="chat.php">
                                 Messages
                                 <span class="side-notif" title="1 new messages">1</span>
                                 <span class="fas fa-envelope"></span>
@@ -270,25 +270,22 @@ include "../manager/UsersManagers.php";
                                         <a class="position-absolute ml-3 mt-3 text-white" href="setting.html" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit cover images"><i class="fas fa-cog"></i></a>
                                         <div class="row">
                                             <div class="col-md-6 ml-auto mr-auto">
-                                               <div class="profiles p-3 my-4 rounded text-center shadow-sm">
+                                                <div class="profiles p-3 my-4 rounded text-center shadow-sm">
                                                     <div class="avatars">
                                                         <a href="setting.html">
                                                             <img src="https://demo.bootstrap.news/bootnews/assets/img/avatar/avatar1.png" alt="Circle Image" class="avatar-lg rounded-circle img-fluid" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit avatar images">
                                                         </a>
                                                     </div>
                                                     <div class="names">
-                                                        <h3 class="title text-light">
-                                                            <?php
+                                                        <h3 class="title text-light"><?php
                                                             $manger = new UsersManagers();
-                                                            $res=$manger->connecter1($_SESSION['email']);
-
+                                                            $res=$manger->connecter1($_REQUEST['id']);
 
                                                             if($res){
                                                                 echo $res['nom']."  ".$res['prenom'];
                                                             }
 
-                                                            ?>
-                                                        </h3>
+                                                            ?></h3>
                                                         <a href="#" class="btn btn-link btn-facebook"><i class="fab fa-facebook"></i></a>
                                                         <a href="#" class="btn btn-link btn-twitter"><i class="fab fa-twitter"></i></a>
                                                         <a href="#" class="btn btn-link btn-gplus"><i class="fab fa-google-plus"></i></a>
@@ -298,8 +295,8 @@ include "../manager/UsersManagers.php";
                                                 </div>
                                             </div>
                                         </div>
-                                     </div>
-                                 </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -425,18 +422,18 @@ include "../manager/UsersManagers.php";
         </div>
     </div>
 </section>
-  <!-- Bootstrap core JavaScript -->
-  <script src="../../../web/vendor/jquery/jquery.min.js"></script>
-  <script src="../../../web/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="../../../web/vendor/jquery/jquery.min.js"></script>
+<script src="../../../web/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="../../../web/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="../../../web/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Contact Form JavaScript -->
-  <script src="../../../web/js/jqBootstrapValidation.js"></script>
-  <script src="../../../web/js/contact_me.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="../../../web/js/jqBootstrapValidation.js"></script>
+<script src="../../../web/js/contact_me.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="../../../web/js/freelancer.min.js"></script>
-  </body>
-  </html>
+<!-- Custom scripts for this template -->
+<script src="../../../web/js/freelancer.min.js"></script>
+</body>
+</html>
