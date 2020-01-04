@@ -1,8 +1,4 @@
-<?php
-session_start();
-include "../../config/dbConnect.php";
-include "../../manager/UsersManagers.php";
-?>
+
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container" style="height:65px">
         <a href='home.php'>
@@ -15,11 +11,7 @@ include "../../manager/UsersManagers.php";
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <?php
-                    $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
-                    if ($curPageName != 'profile.php') {
-
-                        ?>
+                
                         <li class="nav-item mx-0 mx-lg-1">
                             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                                href="#portfolio">ESPACES</a>
@@ -32,16 +24,16 @@ include "../../manager/UsersManagers.php";
                         </li>
                 <li class="name-user">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">
-                        <?php
-                        $manger = new UsersManagers();
-                        $res=$manger->connecter1($_SESSION['id']);
+                    <?php 
+                $manger = new UsersManagers();
+                $res=$manger->connecter2($_SESSION['email']);
+            
 
-
-                        if($res){
-                            echo $res['nom']."  ".$res['prenom'];
-                        }
-
-                        ?>
+            if($res){
+              echo $res['nom']."  ".$res['prenom'];
+            }
+             
+            ?>
                     </a>
                 </li>
 
@@ -57,8 +49,6 @@ include "../../manager/UsersManagers.php";
                 </li>
             </ul>
         </div>
-        <?php
-        }
-        ?>
+       
     </div>
 </nav>
